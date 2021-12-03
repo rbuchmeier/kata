@@ -5,7 +5,7 @@ from datetime import date
 import sys
 import subprocess
 
-NO_LOOK = ['venv', 'LICENSE', '.gitignore', '.git', os.path.basename(__file__)]
+NO_LOOK = ['README.md', 'venv', 'LICENSE', '.gitignore', '.git', os.path.basename(__file__)]
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def prompt_project():
