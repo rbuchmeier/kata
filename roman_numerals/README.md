@@ -11,6 +11,7 @@ Convert the number to a list of digits:
 [int(d) for d in str(number)]
 ```
 
+#### Direct mapping
 From here, you can map directly to the roman numerals:
 ```
 ROMAN_NUMERALS = [
@@ -22,6 +23,7 @@ ROMAN_NUMERALS = [
 ```
 and use the digit list index as the outer roman numeral list index and each number as the indexes for the inner lists. (i.e. a 4 in the hundreds place (3 because 3 digits) is `ROMAN_NUMERALS[3][4]`.
 
+#### Template mapping
 Or you can create a template (you could also use 0s, 1s, and 2s, which has more golf potential but less readability imo):
 ```
 ['', 'a', 'aa', 'aaa', 'ab', 'b', 'ba', 'baa', 'baaa', 'ac']
