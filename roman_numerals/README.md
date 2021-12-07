@@ -32,7 +32,7 @@ and a list of roman numberals:
 ```
 ROMAN = ['I', 'V', 'X', 'L', 'C', 'D', 'M', '', '']
 ```
-and then map each digit to the template list (3 => `aaa`, 5 => `b`, 9 => `ac`) and for each of those templates replace the corresponding template with it's roman numeral (either use `enumerate` to get the roman index or use recursion:
+and then map each digit to the template list (3 => `aaa`, 5 => `b`, 9 => `ac`) and for each of those templates replace the corresponding template with it's roman numeral (either use `enumerate` to get the roman index or use recursion):
 ```
 roman_of_digit = template.replace('a', ROMAN[index*2]).replace('b', ROMAN[index*2+1]).replace('c', ROMAN[index*2+2])
 ```
