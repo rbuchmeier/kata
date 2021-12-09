@@ -128,4 +128,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# annoying config files
+.DS_STORE
+
+# Environment Files/Folders
 venv/
+
+# Image Files
+*.ppm
+
