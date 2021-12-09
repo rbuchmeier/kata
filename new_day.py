@@ -7,12 +7,13 @@ import subprocess
 
 NO_LOOK = ['README.md', 'venv', 'LICENSE', '.gitignore', '.git', os.path.basename(__file__)]
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECTS_WITH_SUB_PROJECTS = ['ray_tracing']
 
-def prompt_project():
-    projects = [f for f in listdir(BASE_DIR) if f not in NO_LOOK]
+def prompt_project(dir):
+    projects = [f for f in listdir(dir) if f not in NO_LOOK]
 
     (option, index) = pick(projects, "Pick a project: ")
-    return option
+    return option + '/' + prompt_project(dir + '/' + option) if option in PROJECTS_WITH_SUB_PROJECTS else option
 
 def make_dir(chosen_project):
     project_dir= BASE_DIR + '/' + chosen_project
@@ -36,7 +37,7 @@ def open_vs_code(project_path):
     clip.copy(f"cd {project_path} && code -a .")
 
 def main():
-    todays_project = prompt_project()
+    todays_project = prompt_project(BASE_DIR)
     new_proj_path = make_dir(todays_project)
     setup_venv(new_proj_path)
     open_vs_code(new_proj_path)
